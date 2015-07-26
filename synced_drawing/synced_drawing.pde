@@ -59,6 +59,11 @@ void setup() {
 void draw() {
   
   display();
+  while (myPort.available() > 0) {
+    int inByte = myPort.read();
+    print(char(inByte));
+    
+  }
 }
 
 void display() {
